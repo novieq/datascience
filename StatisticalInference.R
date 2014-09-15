@@ -30,3 +30,9 @@ n<-1000;
 #sample takes a sample of the specified size from the elements of x using either with or without replacement.
 means <- cumsum(sample(0:1,n,replace=TRUE))/(1:n);
 plot(1:n,means);
+
+#Confidence interval
+library("UsingR");
+data(father.son);
+x<-father.son$sheight;
+(mean(x)+c(-1,1)*qnorm(.95)*sd(x)/sqrt(length(x)));
