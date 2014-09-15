@@ -33,12 +33,18 @@ lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]));
 
 library(datasets);
 data(iris);
-
+tapply(iris$Sepal.Length,iris$Species,mean)
 mean(iris$Sepal.Length)
 #a vector of the means of the variables 'Sepal.Length', 'Sepal.Width', 'Petal.Length', and 'Petal.Width'
 apply(iris[, 1:4], 2, mean)
 data(mtcars)
+mtcars
 # average miles per gallon (mpg) by number of cylinders in the car (cyl)?
 tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(mtcars$hp, mtcars$cyl, mean)
 
+str(mtcars)
+summary(mtcars)
 
+#Profiling in R
+system.time(readLines("http://www.jhsph.edu"))
